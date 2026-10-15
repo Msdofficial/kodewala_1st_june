@@ -1,0 +1,51 @@
+package com.kodewala.thread8.executor2;
+
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+class Task1 implements Callable<Boolean> {
+	
+	MessageSender messageSender;
+	
+	
+	public Task1(MessageSender messageSender) {
+		super();
+		this.messageSender = messageSender;
+	}
+	
+	@Override
+	public Boolean call()
+	{
+		System.out.println("Executing call method......");
+		return messageSender.messageSender("876543654", "your order is recieved");
+	}
+}
+
+public class Driver {
+	
+	public static void main(String[] args) {
+		
+		ExecutorService es = Executors.newFixedThreadPool(5);
+		
+		MessageSender messageSender = new MessageSender("876543", "ok");
+		Task1 task = new Task1(messageSender);
+		
+		for(int i=0 ; i<10 ; i++) {
+		
+			Future<Boolean> future = es.submit(task);
+			
+			try {
+				System.out.println(future.get());
+			} catch (InterruptedException | ExecutionException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
+		}
+		es.shutdown();
+	}
+
+}

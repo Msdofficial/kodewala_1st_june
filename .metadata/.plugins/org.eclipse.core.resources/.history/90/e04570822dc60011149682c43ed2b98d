@@ -1,0 +1,25 @@
+package com.kodewala.thread8.executor2;
+
+public class EmailSender {
+	
+	String email;
+	String body;
+	
+	
+	public EmailSender(String _email, String _body) {
+		super();
+		this.email = _email;
+		this.body = _body;
+	}
+	
+	public boolean sendEmail(String _email , String _body) throws InterruptedException
+	{
+		System.out.println("Sending Email to " +email+ "["+Thread.currentThread().getName()+"]");
+		
+		Thread.currentThread().sleep(2000);
+		return true;
+	}
+	
+	
+
+}

@@ -1,0 +1,5 @@
+package com.kodewala.thread8.executor2;
+
+public class EmailSender {
+
+}

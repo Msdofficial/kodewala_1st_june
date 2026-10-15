@@ -1,0 +1,10 @@
+package com.polymorphism.icici.banking.system;
+
+public class CardPayment {
+	
+	public void DoPayment()
+	{
+		System.out.println("CardPayment.DoPayment()-------- doing card payment");
+	}
+
+}

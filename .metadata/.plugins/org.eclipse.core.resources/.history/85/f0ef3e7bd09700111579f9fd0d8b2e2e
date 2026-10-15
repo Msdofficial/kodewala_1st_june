@@ -1,0 +1,20 @@
+package com.kodewala.hashset1;
+
+import java.util.HashSet;
+
+public class Driver {
+	public static void main(String [] args) 
+	{
+		HashSet<String> city = new HashSet<String>(); 
+		
+		city.add("BLR");
+		city.add("CHE");
+		city.add("KOL");
+		city.add("BBR");
+		city.add("HYD");
+		city.add("BLR");
+		city.add("DEL");
+		
+		System.out.println(city);  // this will print only unique element.
+	}
+}

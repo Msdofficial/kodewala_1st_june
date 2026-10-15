@@ -1,0 +1,38 @@
+package com.kodewala.ecommerce.repository;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import com.kodewala.ecommerce.exception.CartItemNotFoundException;
+import com.kodewala.ecommerce.model.Order;
+
+public class OrderRepository {
+
+	static List<Order> orderDB = new ArrayList<Order>();
+
+	public void saveplacedOrder(Order orderId) {
+		orderDB.add(orderId);
+	}
+
+	public void findOrderByOrderId(String orderId) throws CartItemNotFoundException {
+		List<Order> result = orderDB.stream().filter(order -> order.getOrderId().equals(orderId))
+				.collect(Collectors.toList());
+
+		if (result.isEmpty()) {
+			throw new CartItemNotFoundException("items not found in the cart with customerId" + orderId);
+		}
+	}
+
+	public void findAllOrder() throws CartItemNotFoundException{
+		
+		if (orderDB.isEmpty()) {
+			throw new CartItemNotFoundException("no items in the cart.");
+		}
+
+		for (Order order : orderDB) {
+			System.out.println(order);
+		}
+
+	}
+
+}

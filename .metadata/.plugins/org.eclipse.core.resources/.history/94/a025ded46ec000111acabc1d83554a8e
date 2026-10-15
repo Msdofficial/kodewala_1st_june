@@ -1,0 +1,85 @@
+package com.kodewala.ecommerce.main;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.kodewala.ecommerce.model.CartItem;
+import com.kodewala.ecommerce.model.Customer;
+import com.kodewala.ecommerce.model.Order;
+import com.kodewala.ecommerce.model.Product;
+import com.kodewala.ecommerce.service.CartService;
+import com.kodewala.ecommerce.service.CustomerService;
+import com.kodewala.ecommerce.service.OrderService;
+import com.kodewala.ecommerce.service.ProductService;
+
+public class TestMain {
+
+	public static void main(String[] args) {
+
+		Customer customer = new Customer();
+
+		customer.setAddress("BTM");
+		customer.setCustomerId("MSD123");
+		customer.setEmail("msd@123");
+		customer.setMobile("978355");
+		customer.setName("Masood");
+
+		CustomerService customerService = new CustomerService();
+
+//		customerService.registerCustomer(customer);
+//		customerService.searchCustomerById(customer.getCustomerId());
+//		customerService.viewAllCustomers();
+
+		Product product = new Product();
+
+		product.setProductId("P101");
+		product.setProductName("Laptop");
+		product.setCategory("Electronics");
+		product.setPrice(59999.99);
+		product.setQuantity(10);
+		product.setBrand("Dell");
+
+		ProductService ProductService = new ProductService();
+
+//		ProductService.addProduct(product);
+//		ProductService.viewById(product.getProductId());
+//		ProductService.viewAll();
+
+		CartItem cartItem = new CartItem();
+
+		cartItem.setProductId("P101");
+		cartItem.setProductName("Laptop");
+		cartItem.setPrice(59999.99);
+		cartItem.setQuantity(2);
+		cartItem.setTotalPrice(119999.98);
+
+		CartService CartService = new CartService();
+
+//		CartService.addToCart(product, customer.getCustomerId());
+//		CartService.removeFromCart(product.getProductId(), customer.getCustomerId());
+//		CartService.viewCart(customer.getCustomerId());
+
+		Order order = new Order();
+
+		order.setOrderId("ORD101");
+		order.setCustomerId("CUST101");
+
+		List<CartItem> cartItems = new ArrayList<>();
+		cartItems.add(cartItem);
+
+		order.setCartItem(cartItems);
+
+		order.setTotalAmount(119999.98);
+		order.setOrderStatus("PLACED");
+		order.setOrderDate(LocalDateTime.now());
+		
+		OrderService orderService = new OrderService();
+		
+		orderService.placeOrder();
+		orderService.viewOrderByCustomerId();
+		orderService.viewAllOrder();
+
+	}
+
+}

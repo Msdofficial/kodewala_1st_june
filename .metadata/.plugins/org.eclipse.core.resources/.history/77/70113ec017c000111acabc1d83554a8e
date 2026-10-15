@@ -1,0 +1,31 @@
+package com.kodewala.ecommerce.repository;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.kodewala.ecommerce.model.Customer;
+
+public class CustomerRepository {
+	
+	static Map<String, Customer> customerDB = new HashMap<String, Customer>();
+	
+	public void save(Customer customer)
+	{
+		/**
+		 * adding customer by customer id to database.
+		 */
+		
+		customerDB.put(customer.getCustomerId(), customer);
+	}
+	
+	public void findAll()
+	{
+		
+	}
+	
+	public void findById()
+	{
+		
+	}
+
+}

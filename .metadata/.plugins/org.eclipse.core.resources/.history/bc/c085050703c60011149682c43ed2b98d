@@ -1,0 +1,17 @@
+package e.com.order.mngmnt;
+
+import org.junit.jupiter.api.Test;
+
+public class DiscountCalculatorTests {
+	
+	@Test
+	public void testCalculateDiscountForGold(int DiscountCalculator)
+	{
+		int expected = 
+				
+		DiscountCalculator calculator = new DiscountCalculator();
+		
+		
+	}
+
+}

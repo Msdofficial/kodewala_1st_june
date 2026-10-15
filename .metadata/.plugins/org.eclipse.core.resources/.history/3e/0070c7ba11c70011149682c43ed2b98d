@@ -1,0 +1,60 @@
+package com.constructor;
+
+/*class Customer1 {
+	Customer1() {
+
+		System.out.println("Conststructor");
+	}
+
+	{
+		System.out.println("IIB");
+
+	}
+
+}*/
+
+
+
+class A{
+	static {
+		System.out.println("SIB -A");
+	}
+	{
+		System.out.println("IIB-A");
+	}
+	
+	A(){
+		System.out.println("Constructor -A");
+	}
+}
+
+class B extends A{
+	static {
+		System.out.println("SIB -B");
+	}
+	{
+		System.out.println("IIB-B");
+	}
+	
+	B(){
+		System.out.println("Constructor -B");
+	}
+}
+
+public class Test1 {
+
+	
+
+
+	public static void main(String[] args) {
+
+		
+
+	}
+
+}
+
+
+// sib
+// IIB
+// Constructor

@@ -1,0 +1,11 @@
+package com.polymorphism.icici.banking.system;
+// L-32_W-7_End of Poly-morphism.
+// ROUTER
+public class PaymentProcessor {
+	
+	public void processingPayment(Payment payment)
+	{
+		payment.doPayment();
+	}
+
+}

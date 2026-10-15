@@ -1,0 +1,20 @@
+package com.kodewala.thread8.executor2;
+
+public class OtpSender {
+
+	String mobileNumber;
+	String message;
+
+	public OtpSender(String mobileNumber, String message) {
+		super();
+		this.mobileNumber = mobileNumber;
+		this.message = message;
+	}
+
+	public String otpSender(String mobileNumber , String message)
+	{
+		System.out.println("sending order confirmation to mobile number" +mobileNumber);
+		return "mobile number: "+mobileNumber+ "your order is recieved";
+	}
+
+}

@@ -1,0 +1,62 @@
+package com.kodewala.ecommerce.repository;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.kodewala.ecommerce.exception.CustomerNotFoundException;
+import com.kodewala.ecommerce.model.Customer;
+
+public class CustomerRepository {
+	
+	static Map<String, Customer> customerDB = new HashMap<String, Customer>();
+	
+	public void save(Customer customer)
+	{
+		/**
+		 * adding customer by customer id to database.
+		 */
+		
+		customerDB.put(customer.getCustomerId(), customer);
+	}
+	
+	public void findAll() throws CustomerNotFoundException
+	{
+		/**
+		 * throwing exception if customer not found.
+		 */
+		
+		if(customerDB.size() == 0)
+		{
+			throw new CustomerNotFoundException("Customer not yet registered.");
+		}
+		
+		/**
+		 * iterating the map to show all the customers.
+		 */
+		
+		for(Map.Entry<String, Customer> element : customerDB.entrySet())
+		{
+			System.out.println(element);
+		}
+	}
+	
+	public void findById(String customerId) throws CustomerNotFoundException
+	{
+		
+		/**
+		 * checking if customer exist or not
+		 */
+		
+		if(!customerDB.containsKey(customerId))
+		{
+			throw new CustomerNotFoundException("customer not exist with customer ID : "+customerId);
+		}
+		
+		/**
+		 * fetching the details of customer using customerId from the DB(i.e., HashMap).
+		 */
+		
+		System.out.println(customerDB.get(customerId));
+	}
+
+}

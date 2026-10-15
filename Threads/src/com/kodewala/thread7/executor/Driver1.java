@@ -1,0 +1,36 @@
+package com.kodewala.thread7.executor;
+
+class AddTwoNumbers extends Thread {
+
+	int num1;
+	int num2;
+
+	public AddTwoNumbers(int num1, int num2) {
+		super();
+		this.num1 = num1;
+		this.num2 = num2;
+	}
+
+	public int addTwoNumbers(int num1, int num2) {
+		return num1 + num2;
+	}
+
+	@Override
+	public void run() {
+		System.out.println(addTwoNumbers(num1, num2));
+	}
+
+}
+
+public class Driver1 {
+
+	public static void main(String[] args) {
+		AddTwoNumbers t1 = new AddTwoNumbers(10, 20);
+		t1.start();
+
+		AddTwoNumbers t2 = new AddTwoNumbers(15, 17);
+		t2.start();
+
+	}
+
+}

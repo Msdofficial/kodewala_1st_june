@@ -1,0 +1,8 @@
+package com.kodewala.encapsulation;
+
+public class Account {
+	
+	private int balance;
+	public String name;
+
+}

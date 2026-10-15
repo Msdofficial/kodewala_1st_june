@@ -1,0 +1,25 @@
+package com.kodewala.thread2;
+
+class PrintNumber extends Thread{
+	
+	@Override
+	public void run()
+	{
+		for(int i=1 ; i<20 ; i++)
+		{
+			System.out.println(i+ " " +Thread.currentThread().getId());
+		}
+	}
+}
+public class Driver1 {
+	
+	public static void main(String[] args)
+	{
+		PrintNumber t1 = new PrintNumber();
+		t1.start();
+		
+		PrintNumber t2 = new PrintNumber();
+		t2.start();
+	}
+
+}

@@ -1,0 +1,27 @@
+package com.kodewala.ecommerce.repository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.kodewala.ecommerce.model.Order;
+
+public class OrderRepository {
+	
+	List<Order> orderDB = new ArrayList<Order>();
+	
+	public void saveplacedOrder()
+	{
+		
+	}
+	
+	public void findOrderByCustomerId()
+	{
+		
+	}
+	
+	public void findAllOrder()
+	{
+		
+	}
+
+}

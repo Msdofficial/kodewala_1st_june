@@ -1,0 +1,56 @@
+package com.kodewala.linkedList1;
+
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
+// Revision
+
+class Product{
+	
+	int productId;
+	String productName;
+	
+	public Product(int _productId , String _productName)
+	{
+		this.productId = _productId;
+		this.productName = _productName;
+	}
+//	@Override
+//	public String toString()   -->  We can override like this to get the desired output otherwise some outputs 
+//	{                 --> otherwise we will get some random output like this --> com.kodewala.linkedList1.Product@28a418fc 
+//		  
+//	   return productId +  " "   +productName;  <-- Return Statement              
+//	}
+//	
+}
+
+public class Driver2 {
+	
+	public static void main(String[] args) 
+	{
+		Product p1 = new Product(12 , "Phone");
+		Product p2 = new Product(123 , "TV");
+		Product p3 = new Product(1234, "Camera");
+		Product p4 = new Product(12345 , "Projector");
+		
+		List<Product> products = new LinkedList<Product>();
+		
+		products.add(p1);
+		products.add(p2);
+		products.add(p3);
+		products.add(p4);
+		
+		System.out.println();
+		
+		Iterator<Product> itr = products.iterator();
+		
+		while(itr.hasNext())
+		{
+			Product p = itr.next();
+			System.out.println(p.productId+" "+p.productName);//we can do like this if we don't want to override toString()
+		}
+		
+	}
+
+}

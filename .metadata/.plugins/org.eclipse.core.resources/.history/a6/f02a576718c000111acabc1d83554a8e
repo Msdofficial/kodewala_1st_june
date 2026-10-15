@@ -1,0 +1,24 @@
+package com.kodewala.ecommerce.service;
+
+public class CustomerService {
+	
+	public void registerCustomer()
+	{
+		
+	}
+	
+	public void viewAllCustomers()
+	{
+		
+	}
+	
+	public void searchCustomerById()
+	{
+		
+	}
+	
+	
+	
+	
+
+}

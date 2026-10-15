@@ -1,0 +1,62 @@
+package com.kodewala.ecommerce.repository;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import com.kodewala.ecommerce.exception.CartNotFoundException;
+import com.kodewala.ecommerce.exception.ProductNotFoundException;
+import com.kodewala.ecommerce.model.Product;
+
+public class CartRepository {
+	
+	Map<String, List<Product>> cartDB = new HashMap<String, List<Product>>();
+	
+	public void saveToCart(Product product , String customerId)
+	{
+		cartDB.computeIfAbsent(customerId, list -> new ArrayList<Product>()).add(product);
+	}
+	
+	public boolean deleteFromCart(String productId, String customerId) throws ProductNotFoundException
+	{
+		/**
+		 * First we are fetching the list of products from cartDb on the basis of customerId
+		 */
+		List<Product> productList = cartDB.get(customerId);
+		
+		/**
+		 * We will use the Iterator to iterate or else it will throw
+		 * 	 the ConcurrentModificationException on removing the element 
+		 */
+		Iterator itr = productList.iterator();
+		
+		while(itr.hasNext()) {
+			
+			Product product = (Product) itr.next();
+			
+			if(product.getProductId().equals(productId)) {
+				itr.remove();
+				return true;
+			}
+		}
+		
+		throw new ProductNotFoundException("product not exist in cart : "+productId);
+	}
+	
+	public void findCart(String customerId) throws ProductNotFoundException
+	{
+		if(cartDB.get(customerId) == null)
+		{
+			throw new CartNotFoundException("cart not found with customerId : "+customerId);
+		}
+		
+		for(Map.Entry<String, List<Product>> element : cartDB.entrySet())
+		{
+			System.out.println(element);
+		}
+		
+	}
+
+}

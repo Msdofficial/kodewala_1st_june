@@ -1,0 +1,32 @@
+package com.constructor;
+
+public class Test1  
+{
+	
+static {
+	System.out.println("SIB");
+}
+		String name;
+		int cust_Id;
+		
+		Customer()
+		{
+			
+			
+			System.out.println("Conststructor");
+		}
+		{
+			System.out.println("IIB");
+			
+		}
+		
+public static void main(String[] args) {
+	
+	Customer customer = new Customer();
+	
+	
+}
+
+}
+
+

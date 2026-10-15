@@ -1,0 +1,20 @@
+package com.kodewala.stream.api2;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Driver {
+	
+	public static void main(String[] args) 
+	{
+		List<String> city = Arrays.asList("BLR" , "CHE" , "HYD", "BLR" , "AHM" , "CHE" , "CH");
+		
+		List<String> output = city.stream().distinct().collect(Collectors.toList());
+		
+		System.out.println(output);
+		
+		city.stream().distinct().forEach(e -> System.out.println(e));
+	}
+
+}

@@ -1,0 +1,42 @@
+package com.kodewala.linkedList1;
+
+import java.util.LinkedList;
+import java.util.List;
+
+// Revision
+
+class Product{
+	
+	int productId;
+	String productName;
+	
+	public Product(int _productId , String _productName)
+	{
+		this.productId = _productId;
+		this.productName = _productName;
+	}
+	
+}
+
+public class Driver2 {
+	
+	public static void main(String[] args) 
+	{
+		Product p1 = new Product(12 , "Phone");
+		Product p2 = new Product(123 , "TV");
+		Product p3 = new Product(1234, "Camera");
+		Product p4 = new Product(12345 , "Projector");
+		
+		List<Product> products = new LinkedList<Product>();
+		
+		products.add(p1);
+		products.add(p2);
+		products.add(p3);
+		products.add(p4);
+		
+		System.out.println(products);
+		
+		
+	}
+
+}

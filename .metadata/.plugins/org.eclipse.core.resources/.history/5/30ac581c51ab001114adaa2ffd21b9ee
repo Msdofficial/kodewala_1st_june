@@ -1,0 +1,34 @@
+package com.kodewala.zepto.exceptionhandling;
+
+public class User {
+
+	
+	public void createUser(String userName , String userId)
+	{
+		System.out.println("Method START");
+		
+		userId = null;
+		
+		try
+		{
+			userId = userName.substring(0, 5) + "123";
+			System.out.println("userId created : "+userId);
+			
+		}
+		
+		catch (NullPointerException e) 
+		{
+			e.printStackTrace();
+			System.out.println("userName is null.");
+		}
+		
+		catch (StringIndexOutOfBoundsException e) {
+			System.out.println("userName.length < 5");
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+			System.out.println("Unknown Exception.");
+		}
+	}
+}

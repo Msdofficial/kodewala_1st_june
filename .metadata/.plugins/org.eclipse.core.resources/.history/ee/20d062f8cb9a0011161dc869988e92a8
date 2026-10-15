@@ -1,0 +1,27 @@
+package com.kodewala.hashset1;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class HashingExplr {
+	public static void main(String[] args) 
+	{
+		Set<String> products = new HashSet<String>();
+		
+		products.add("SDFJA");
+		products.add("A;OSFKOAFM;LMB");
+		products.add(";LASMFC");
+		products.add(";LM;AD");
+		products.add(";LAKFDE");
+		products.add("EOFJOAEF");
+		products.add("PFKPFG");
+		products.add("PKFA'PKH");
+		products.add("VKF'AI");
+		products.add("A'PFKPJ");
+		products.add("A;KFK");
+		products.add(";LAMF'L");
+		//products.add("MASOOD");
+		
+	}
+
+}

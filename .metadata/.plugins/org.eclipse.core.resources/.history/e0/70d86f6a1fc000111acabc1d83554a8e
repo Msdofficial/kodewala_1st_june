@@ -1,0 +1,50 @@
+package com.kodewala.ecommerce.repository;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.kodewala.ecommerce.exception.ProductNotFoundException;
+import com.kodewala.ecommerce.model.Product;
+
+public class ProductRepository {
+	
+	static List<Product> productDB = new ArrayList<Product>();
+	
+	public void addProduct(Product product)
+	{
+		productDB.add(product);
+	}
+	
+	public void viewById(Product productId) throws ProductNotFoundException
+	{
+		if(!productDB.contains(productId))
+		{
+			throw new ProductNotFoundException("product not added yet with productId : "+productId);
+		}
+		
+		for(Product product : productDB)
+		{
+			if(product.getProductId().equals(productId))
+			{
+				System.out.println(product);
+			}
+		}
+		
+		
+	}
+	
+	public void viewAll()
+	{
+		if(productDB.isEmpty())
+		{
+			throw new ProductNotFoundException("Product not added yet.");
+		}
+		
+		for(Product product : productDB)
+		{
+			System.out.println(product);
+		}
+		
+	}
+
+}

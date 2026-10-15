@@ -1,0 +1,18 @@
+package com.kodewala.strings;
+
+public class Driver 
+{
+	public static void main(String args []) 
+	{
+		// one of the way to create String is using String literals
+		// when String literals is declared , it will get stored in heap but 
+		// in String constant pool (SCP) . 
+		String city = "Bangalore";  // String literal
+		String country = "India";
+		String city1 = "Bangalore";
+		// here only two object will be created in SCP bcz the content in 
+		// city and city1 is same , so the reference name i.e., city and 
+		// city1 will refer the same object in SCP.
+		System.out.println(city == city1); // True
+	}
+}

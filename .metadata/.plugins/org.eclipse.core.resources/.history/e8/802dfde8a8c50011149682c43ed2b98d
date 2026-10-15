@@ -1,0 +1,29 @@
+package com.kodewala.thread6.reentrantlock;
+
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
+class CustomThreadFactory implements ThreadFactory{
+
+	@Override
+	public Thread newThread(Runnable r) {
+		
+		return new Thread();
+	}
+	
+}
+
+public class Driver7 {
+
+	public static void main(String[] args) {
+		
+		ThreadPoolExecutor customExecutor = new ThreadPoolExecutor(2, 4, 1, TimeUnit.MINUTES, new ArrayBlockingQueue<Runnable>(4),
+				new )
+		
+		CompletableFuture<Integer> completableFuture = 
+	}
+
+}

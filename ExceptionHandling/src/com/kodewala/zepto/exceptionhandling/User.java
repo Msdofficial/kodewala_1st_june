@@ -1,0 +1,52 @@
+package com.kodewala.zepto.exceptionhandling;   // Exception handling using multiple catch block.
+/*
+ Requirements: 
+ 1. Use try and catch block to save the code from stopping abnormally.
+ 2. Use multiple catch block to show the exception specifically.
+ 3. if you open connection with database then after use , it must be closed.(we'll use finally block)
+ 
+ NOTE : finally block is used when we have some mandatory task , and it must have to get executed.
+*/ 
+public class User {
+
+	
+	public void createUser(String userName , String userId)
+	{
+		System.out.println("Method START");
+		
+		userId = null;
+		
+		try
+		{
+			userId = userName.substring(0, 5) + "123";
+			System.out.println("userId created : "+userId);
+			
+		}
+		
+		// here null pointer exception is thrown that means " an object of class 'nullPointer' is created and thrown.   
+		
+		catch (NullPointerException e) 
+		{
+			e.printStackTrace();
+			System.out.println("userName is null.");
+		}
+		
+		catch (StringIndexOutOfBoundsException e)
+		{
+			e.printStackTrace();
+			System.out.println("userName.length < 5");
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+			System.out.println("Unknown Exception.");
+		}
+		
+		finally // This block will execute whether exception occurs or not.
+		{
+			System.out.println("Closing DB connection.......");
+		}
+		
+		System.out.println("method END");
+	}
+}

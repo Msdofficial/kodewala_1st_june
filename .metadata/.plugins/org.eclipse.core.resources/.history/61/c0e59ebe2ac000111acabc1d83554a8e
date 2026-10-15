@@ -1,0 +1,20 @@
+package com.kodewala.ecommerce.service;
+
+public class CartService {
+	
+	public void addToCart()
+	{
+		
+	}
+	
+	public void removeFromCart()
+	{
+		
+	}
+	
+	public void viewCart()
+	{
+		
+	}
+
+}

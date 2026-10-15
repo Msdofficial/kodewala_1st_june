@@ -1,0 +1,34 @@
+package com.constructor;
+
+class Customer1 {
+	Customer1() {
+
+		System.out.println("Conststructor");
+	}
+
+	{
+		System.out.println("IIB");
+
+	}
+
+}
+
+public class Test1 {
+
+	static {
+		System.out.println("SIB");
+	}
+
+
+	public static void main(String[] args) {
+
+		Customer1 customer = new Customer1();
+
+	}
+
+}
+
+
+// sib
+// IIB
+// Constructor

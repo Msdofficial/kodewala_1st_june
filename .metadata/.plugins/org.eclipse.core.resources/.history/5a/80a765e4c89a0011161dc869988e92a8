@@ -1,0 +1,18 @@
+package com.kodewala.hashset1;
+
+import java.util.HashSet;
+
+public class Driver1 {
+	public static void main(String[] args)
+	{
+		HashSet<String> product = new HashSet<String>();
+		
+		product.add("iPhone17");
+		product.add("samsungs26");
+		product.add("lg32");
+		product.add("mac-pro324");
+		
+		
+		
+	}
+}

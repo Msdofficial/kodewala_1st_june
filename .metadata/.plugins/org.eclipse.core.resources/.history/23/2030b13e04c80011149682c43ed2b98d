@@ -1,0 +1,32 @@
+package com.zepto.order;
+
+public class OrderMgmnt {
+
+	public static void main(String[] args) {
+		
+
+	}
+	
+	public void placeOrder(Order order)
+	{
+		//take the order
+		
+		  System.out.println("========== ORDER RECEIVED ==========");
+		    System.out.println("Order ID: " + order.getOrderId());
+		    System.out.println("Customer ID: " + order.getCustomerId());
+		    System.out.println("Delivery Address: " + order.getDeliveryAddress());
+		    System.out.println("Total Quantity: " + order.getTotalQuantity());
+		    System.out.println("Total Amount: ₹" + order.getTotalAmount());
+		    System.out.println("Payment Status: " + order.getPaymentStatus());
+		    System.out.println("Order Status: " + order.getOrderStatus());
+		    System.out.println("Order Date: " + order.getOrderDate());
+		    System.out.println("Expected Delivery: " + order.getExpectedDeliveryTime());
+		    System.out.println("====================================");
+		    System.out.println("Your Zepto order has been received successfully!");
+		
+		//confirm the payment
+		    
+		    PaymentService
+	}
+
+}

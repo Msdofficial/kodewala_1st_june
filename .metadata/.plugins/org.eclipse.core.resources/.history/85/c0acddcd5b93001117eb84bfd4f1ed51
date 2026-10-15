@@ -1,0 +1,9 @@
+package com.amazon.user;
+
+public class Driver 
+{
+	public static void main(String [] args) 
+	{
+		User user = new User("rhfnsdf-finnef-kjffjwef-jefj");
+	}
+}

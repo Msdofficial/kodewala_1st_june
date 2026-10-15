@@ -1,0 +1,45 @@
+package com.kodewala.ecommerce.repository;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import com.kodewala.ecommerce.exception.ProductNotFoundException;
+import com.kodewala.ecommerce.model.Product;
+
+public class ProductRepository {
+
+	static List<Product> productDB = new ArrayList<Product>();
+
+	public void save(Product product) {
+		productDB.add(product);
+	}
+
+	public void findById(String productId) throws ProductNotFoundException {
+
+		List<Product> result = productDB.stream().filter(product -> product.getProductId().equals(productId))
+				.collect(Collectors.toList());
+
+		if (result.isEmpty()) {
+			throw new ProductNotFoundException("Product Not Found " + productId);
+		}
+		
+		/**
+		 * agar result hai to print krna ,, hum bhi preshan hai , wo bhi pareshan hai to tro phir
+		 */
+		System.out.println(result);
+		
+	}
+
+	public void findAll() {
+		if (productDB.isEmpty()) {
+			throw new ProductNotFoundException("Product not added yet.");
+		}
+
+		for (Product product : productDB) {
+			System.out.println(product);
+		}
+
+	}
+
+}

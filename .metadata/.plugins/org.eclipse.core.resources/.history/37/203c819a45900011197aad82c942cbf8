@@ -1,0 +1,22 @@
+package com.user.sbi;
+
+public class SBIUser {
+	
+	private String name ;
+	private String userId;
+	private String pass;
+	private int balance;
+	
+	SBIUser(){
+		System.out.println("I am inside SBIUser()");
+	}
+	
+	public static void main(String [] args) {
+		System.out.println("START");
+		
+		SBIUser sbiUser= new SBIUser();
+		
+		
+		System.out.println("END");
+	}
+}

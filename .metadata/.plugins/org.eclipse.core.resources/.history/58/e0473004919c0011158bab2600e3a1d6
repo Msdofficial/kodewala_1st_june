@@ -1,0 +1,44 @@
+package com.kodewala.treeset;
+
+import java.util.Set;
+import java.util.TreeSet;
+
+class Product implements comparable<Product>{
+	int id;
+	String name;
+	
+	public Product(int id, String name) {
+		super();
+		this.id = id;
+		this.name = name;
+	}
+	@Override
+	public int compareTo(Product p) 
+	{
+		return this.name.compareTo(p.name);
+	}
+	
+	
+}
+
+public class Driver1 {
+	
+	public static void main(String[] args)
+	{
+		Set<Product> products = new TreeSet<Product>();
+		
+		Product p1 = new Product(17 ,"iPhone");
+		Product p2 = new Product(16 ,"iPhone");
+		Product p3 = new Product(25 ,"Samsung");
+		Product p4 = new Product(26 ,"Samsung");
+		Product p5 = new Product(16 ,"iPhone");
+		
+		products.add(p1);
+		products.add(p2);
+		products.add(p3);
+		products.add(p4);
+		products.add(p5);
+		
+	}
+
+}

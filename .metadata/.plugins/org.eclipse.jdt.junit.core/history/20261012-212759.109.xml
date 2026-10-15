@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="DiscountCalculatorTests" project="order-mngmnt" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="e.com.order.mngmnt.DiscountCalculatorTests" time="0.033" displayname="DiscountCalculatorTests" uniqueid="[engine:junit-jupiter]/[class:e.com.order.mngmnt.DiscountCalculatorTests]">
+    <testcase name="testCalculateDiscountForGold" classname="e.com.order.mngmnt.DiscountCalculatorTests" time="0.03" displayname="testCalculateDiscountForGold()" uniqueid="[engine:junit-jupiter]/[class:e.com.order.mngmnt.DiscountCalculatorTests]/[method:testCalculateDiscountForGold()]"/>
+    <testcase name="testCalculateDiscountForDefault" classname="e.com.order.mngmnt.DiscountCalculatorTests" time="0.001" displayname="testCalculateDiscountForDefault()" uniqueid="[engine:junit-jupiter]/[class:e.com.order.mngmnt.DiscountCalculatorTests]/[method:testCalculateDiscountForDefault()]"/>
+    <testcase name="testCalculateDiscountForPlatinum" classname="e.com.order.mngmnt.DiscountCalculatorTests" time="0.001" displayname="testCalculateDiscountForPlatinum()" uniqueid="[engine:junit-jupiter]/[class:e.com.order.mngmnt.DiscountCalculatorTests]/[method:testCalculateDiscountForPlatinum()]"/>
+  </testsuite>
+</testrun>

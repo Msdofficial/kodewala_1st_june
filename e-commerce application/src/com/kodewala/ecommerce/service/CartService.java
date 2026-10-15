@@ -1,0 +1,27 @@
+package com.kodewala.ecommerce.service;
+
+import com.kodewala.ecommerce.model.Product;
+import com.kodewala.ecommerce.repository.CartRepository;
+
+public class CartService {
+	
+	CartRepository cartRepository = new CartRepository();
+	
+	public void addToCart(Product product , String customerId)
+	{
+		cartRepository.saveToCart(product, customerId);
+		System.out.println("product added successfully to the cart.");
+	}
+	
+	public void removeFromCart(String productId , String customerId)
+	{
+		cartRepository.deleteFromCart(productId , customerId);
+		System.out.println("product removed successfully from the cart.");
+	}
+	
+	public void viewCart(String customerId)
+	{
+		cartRepository.findCart(customerId);
+	}
+
+}

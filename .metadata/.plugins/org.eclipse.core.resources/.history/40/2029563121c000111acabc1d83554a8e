@@ -1,0 +1,45 @@
+package com.kodewala.ecommerce.main;
+
+import com.kodewala.ecommerce.model.Customer;
+import com.kodewala.ecommerce.model.Product;
+import com.kodewala.ecommerce.service.CustomerService;
+import com.kodewala.ecommerce.service.ProductService;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		Customer customer = new Customer();
+		
+		customer.setAddress("BTM");
+		customer.setCustomerId("MSD123");
+		customer.setEmail("msd@123");
+		customer.setMobile("978355");
+		customer.setName("Masood");
+		
+		CustomerService customerService = new CustomerService();
+		
+		customerService.registerCustomer(customer);
+		customerService.searchCustomerById(customer.getCustomerId());
+		customerService.viewAllCustomers();
+		
+		
+		Product product = new Product();
+		
+		product.setProductId("P101");
+		product.setProductName("Laptop");
+		product.setCategory("Electronics");
+		product.setPrice(59999.99);
+		product.setQuantity(10);
+		product.setBrand("Dell");
+		
+		ProductService ProductService = new ProductService();
+		
+		ProductService.addProduct(product);
+		ProductService.viewById(product);
+		ProductService.viewAll();
+				
+		
+	}
+
+}

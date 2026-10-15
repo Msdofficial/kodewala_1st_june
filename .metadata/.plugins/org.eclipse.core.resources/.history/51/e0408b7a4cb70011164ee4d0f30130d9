@@ -1,0 +1,93 @@
+package com.kodewala.thread5;
+
+class BankAccount{
+	
+	private int balance = 1000;
+	
+	public void transfer(BankAccount reciever , int amount)
+	{
+		
+		System.out.println("["+Thread.currentThread().getName()+ "] sending email ... requested fund transfer");
+		
+		synchronized (this) {
+		if(balance>=amount) {
+			System.out.println("["+Thread.currentThread().getName()+ "] checked balance" +balance);
+			
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			balance = balance - amount;
+			reciever.balance = reciever.balance + amount;
+			
+			System.out.println("["+Thread.currentThread().getName()+ "] Transferred: "+amount);
+
+			}else {
+				System.out.println("[" +Thread.currentThread().getName()+ "] Insufficient Balance." );
+		}	
+	}
+		System.out.println("["+Thread.currentThread().getName()+ "] sending email ... requested fund transfer");
+}
+	public int getBalance()
+	{
+		return balance;
+	}
+}
+
+class TransferThread1 extends Thread{
+	
+	private BankAccount sender;
+	private BankAccount reciever;
+	
+	public TransferThread1(BankAccount sender , BankAccount reciever )
+	{
+		this.sender = sender;
+		this.reciever = reciever;
+	}
+	
+	public void run()
+	{
+		sender.transfer(reciever, 700);
+	}
+}
+class TransferThread2 extends Thread{
+	
+	private BankAccount sender;
+	private BankAccount reciever;
+	
+	public TransferThread2(BankAccount sender , BankAccount reciever )
+	{
+		this.sender = sender;
+		this.reciever = reciever;
+	}
+	
+	public void run()
+	{
+		sender.transfer(reciever, 600);
+	}
+	
+}
+
+
+public class BankDemo {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		BankAccount account1 = new BankAccount();
+		BankAccount account2 = new BankAccount();
+		
+		Thread t1 = new TransferThread1(account1 , account2);
+		Thread t2 = new TransferThread2(account1 , account2);
+		
+		t1.start();
+		t2.start();
+		
+		t1.join();
+		t2.join();
+		
+		System.out.println("Sender balance: "+account1.getBalance());
+		System.out.println("Reciever balance: "+account2.getBalance());
+	}
+
+}

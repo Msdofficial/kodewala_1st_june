@@ -1,0 +1,62 @@
+package com.kodewala.ecommerce.ui;
+
+import java.util.Scanner;
+
+public class MainMenu {
+
+    private Scanner sc;
+
+    private AdminConsole adminConsole;
+    private CustomerConsole customerConsole;
+
+    public MainMenu(Scanner sc) {
+        this.sc = sc;
+
+        adminConsole = new AdminConsole(sc);
+        customerConsole = new CustomerConsole(sc);
+    }
+
+    public void start() {
+
+        boolean running = true;
+
+        System.out.println(
+                "E-Commerce Product & Order Management System"
+        );
+
+        while (running) {
+
+            System.out.println("""
+                    
+                    ===== MAIN MENU =====
+                    
+                    1. Admin
+                    2. Customer
+                    3. Exit
+                    """);
+
+            System.out.print("Choose: ");
+
+            String choice = sc.nextLine();
+
+            switch (choice) {
+
+                case "1":
+                    adminConsole.start();
+                    break;
+
+                case "2":
+                    customerConsole.start();
+                    break;
+
+                case "3":
+                    running = false;
+                    System.out.println("Thank you for using the application.");
+                    break;
+
+                default:
+                    System.out.println("Invalid choice.");
+            }
+        }
+    }
+}

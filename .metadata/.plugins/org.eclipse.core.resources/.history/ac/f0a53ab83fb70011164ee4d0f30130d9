@@ -1,0 +1,24 @@
+package com.kodewala.real.example.thread4;
+
+public class BankDemo {
+	
+	public static void main(String[] args) throws InterruptedException {
+		
+		BankAccount account1 = new BankAccount();  // Sender 
+		BankAccount account2 = new BankAccount();  // Receiver
+		
+		Thread t1 = new TransferThread1(account1 , account2);
+		Thread t2 = new TransferThread2(account1 , account2);
+		
+		t1.start();
+		t2.start();
+		
+		t1.join();
+		t2.join();
+		
+		System.out.println("Sender Balance" +account1.getBalance());
+		System.out.println("Reciever Balance" +account2.getBalance());
+	}
+	
+
+}

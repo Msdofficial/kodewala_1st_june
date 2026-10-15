@@ -1,0 +1,12 @@
+package com.kodewala.zepto.exceptionhandling;
+
+public class Driver {
+	
+	public static void main(String[] args)
+	{
+		User u1 = new User();
+		
+		u1.createUser("Masood", "Msd@#$%");
+	}
+
+}

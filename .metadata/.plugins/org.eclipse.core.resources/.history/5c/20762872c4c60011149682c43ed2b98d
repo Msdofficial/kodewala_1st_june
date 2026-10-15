@@ -1,0 +1,51 @@
+package e.com.order.mngmnt;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
+public class DiscountCalculatorTests {
+	
+	
+	@Test
+	public void testCalculateDiscountForGold()
+	{ 
+		int expected = 900;
+		
+		DiscountCalculator calculator = new DiscountCalculator();
+		
+		int actual = calculator.discountCalculator(1000, "GOLD", 10);
+		
+		assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testCalculateDiscountForPlatinum()
+	{ 
+		int expected = 800;
+		
+		DiscountCalculator calculator = new DiscountCalculator();
+		
+		int actual = calculator.discountCalculator(1000, "PLATINUM", 10);
+		
+		assertEquals(expected, actual);
+		
+	}
+	
+	@Test
+	public void testCalculateDiscountForDefault()
+	{ 
+		int expected = 1000;
+		
+		DiscountCalculator calculator = new DiscountCalculator();
+		
+		int actual = calculator.discountCalculator(1000, "PREMIUM", 10);
+		
+		assertEquals(expected, actual);
+		
+		
+		
+	}
+
+}

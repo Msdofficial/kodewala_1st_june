@@ -1,0 +1,41 @@
+package com.constructor1;
+
+
+
+class A {
+	static {
+		System.out.println("SIB -A");
+	}
+	{
+		System.out.println("IIB-A");
+	}
+
+	A() {
+		System.out.println("Constructor -A");
+	}
+}
+
+class B extends A {
+	static {
+		System.out.println("SIB -B");
+	}
+	{
+		System.out.println("IIB-B");
+	}
+
+	B() {
+		System.out.println("Constructor -B");
+	}
+}
+
+public class Test1 {
+
+	public static void main(String[] args) {
+		
+		B b = new B();
+
+	}
+
+}
+
+// 

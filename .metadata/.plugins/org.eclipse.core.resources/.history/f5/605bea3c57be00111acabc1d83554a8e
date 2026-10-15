@@ -1,0 +1,56 @@
+package com.kodewala.main;
+
+import java.util.Scanner;
+
+public class EcommerceApplication {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Main Menu");
+		boolean running = true;
+		while(running)
+		System.out.println("""
+			1) Admin
+			2) Customer
+			3) Exit
+		""");
+		
+		System.out.println("CHOOSE : ");
+		int choice1 = sc.nextInt();
+		
+		if(choice1 == 1)
+		{
+			System.out.println("""
+					1. Add Product
+					2. View Products
+					3. Search Product
+					4. Update Product
+					5. Delete Product
+					6. View Customers
+					7. View All Orders
+					8. Exit
+					""");
+		}
+		else if(choice1 ==2)
+		{
+			System.out.println("""
+			1. Register
+			2. Login
+			3. View Products
+			4. Search Product
+			5. Add Product to Cart
+			6. View Cart
+			7. Remove Product from Cart
+			8. Place Order
+			9. view My Orders
+			10. Cancel Order
+			11. Logout
+			""");
+			
+			return;
+			
+		}
+	}
+
+}

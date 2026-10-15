@@ -1,0 +1,80 @@
+package com.kodewala.thread5;
+
+class BankAccount{
+	
+	private int balance = 1000;
+	
+	public void transfer(BankAccount reciever , int amount)
+	{
+		
+		System.out.println("["+Thread.currentThread().getName()+ "] sending email ... requested fund transfer");
+		
+		synchronized (this) {
+		if(balance>=amount) {
+			System.out.println("["+Thread.currentThread().getName()+ "] checked balance" +balance);
+			
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			balance = balance - amount;
+			reciever.balance = reciever.balance + amount;
+			
+			System.out.println("["+Thread.currentThread().getName()+ "] Transferred: "+amount);
+
+			}else {
+				System.out.println("[" +Thread.currentThread().getName()+ "] Insufficient Balance." );
+		}	
+	}
+		System.out.println("["+Thread.currentThread().getName()+ "] sending email ... requested fund transfer");
+}
+	public int getBalance()
+	{
+		return balance;
+	}
+}
+
+class TransferThread1 extends Thread{
+	
+	private BankAccount sender;
+	private BankAccount reciever;
+	
+	public TransferThread1(BankAccount sender , BankAccount reciever )
+	{
+		this.sender = sender;
+		this.reciever = reciever;
+	}
+	
+	public void run()
+	{
+		sender.transfer(reciever, 700);
+	}
+}
+class TransferThread2 extends Thread{
+	
+	private BankAccount sender;
+	private BankAccount reciever;
+	
+	public TransferThread2(BankAccount sender , BankAccount reciever )
+	{
+		this.sender = sender;
+		this.reciever = reciever;
+	}
+	
+	public void run()
+	{
+		sender.transfer(reciever, 600);
+	}
+	
+}
+
+
+public class BankDemo {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

@@ -1,0 +1,14 @@
+package com.kodewala.hashset1;
+
+public class HashCode {
+	public static void main(String[] args)
+	{
+		String s1 = "BLR";
+		String s2 = "BLR";
+		
+		System.out.println("HashCode of s1 is: "+s1.hashCode()+" , HashCode of s2 is: "+s2.hashCode());
+		
+		
+	}
+
+}

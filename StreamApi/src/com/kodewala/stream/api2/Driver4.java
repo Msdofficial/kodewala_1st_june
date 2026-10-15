@@ -1,0 +1,21 @@
+package com.kodewala.stream.api2;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+// find the duplicate from given list of string
+public class Driver4 {
+	
+	public static void main(String[] args)
+	{
+		List<String> list = Arrays.asList("One" , "Two" , "One" , "Three" , "Four" , "One" , "Two");
+		
+		// First way --> declare a set and filter using set characteristic i.e., set allow only unique element
+		Set<String> set = new HashSet<String>();
+		
+		list.stream().filter(num ->! set.add(num)).forEach(num -> System.out.println(num));
+	}
+
+}

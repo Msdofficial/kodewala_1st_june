@@ -1,0 +1,15 @@
+package com.kodewala.hashset1;
+
+public class HashCode {
+	public static void main(String[] args)
+	{
+		String s1 = "BLR";
+		String s2 = "BLR";
+		
+		System.out.println("HashCode of s1 is: "+s1.hashCode()+" , HashCode of s2 is: "+s2.hashCode());
+		// Here we can see that if two objects are equal then their hashCode must be same
+		// and we can prove it using .equals() method
+		System.out.println(s1.equals(s2)); //  output will be true.
+	}
+
+}

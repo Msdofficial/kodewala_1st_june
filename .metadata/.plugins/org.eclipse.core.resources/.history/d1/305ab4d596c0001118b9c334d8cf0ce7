@@ -1,0 +1,85 @@
+package com.kodewala.ecommerce.main;
+
+import java.util.Scanner;
+
+public class EcommerceApplication {
+
+	public static void main(String[] args) {
+		
+		System.out.println("                      E-Commerce Product & Order Management System \n");
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Main Menu");
+		boolean running1 = true;
+		while (running1) {
+			System.out.println("""
+						1) Admin
+						2) Customer
+						3) Exit
+					""");
+
+			System.out.print("CHOOSE : ");
+			String choice1 = sc.nextLine();
+			switch (choice1) {
+			case "1":
+				boolean running2 = true;
+				while (running2) {
+					System.out.println("""
+							1. Add Product
+							2. View Products
+							3. Search Product
+							4. Update Product
+							5. Delete Product
+							6. View Customers
+							7. View All Orders
+							8. Exit
+							""");
+					System.out.print("CHOOSE : ");
+					String choice2 = sc.nextLine();
+					switch (choice2) {
+					case "8":
+						running2 = false;
+						break;
+					}
+				}
+				break;
+			case "2":
+				boolean running3 = true;
+				while (running3) {
+					System.out.println("""
+							1. Register
+							2. Login
+							3. View Products
+							4. Search Product
+							5. Add Product to Cart
+							6. View Cart
+							7. Remove Product from Cart
+							8. Place Order
+							9. view My Orders
+							10. Cancel Order
+							11. Logout
+							""");
+					System.out.print("CHOOSE : ");
+					String choice3 = sc.nextLine();
+					switch (choice3) {
+					case "11":
+						running3 = false;
+						break;
+					}
+
+				}
+				break;
+			case "3":
+				running1 = false;
+				break;
+
+			default:
+				System.out.println("Invalid entry..... enter valid one");
+
+			}
+
+		}
+
+	}
+
+}

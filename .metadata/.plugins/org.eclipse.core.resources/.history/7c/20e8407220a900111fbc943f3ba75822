@@ -1,0 +1,26 @@
+package com.kodewala.nullpointer.exceptionhandling;
+
+public class Driver {
+	
+	public static void main(String[] args)
+	{
+		System.out.println("main method STARTS,,,");
+		
+		try 
+		{
+		String name = "MD MASOOD RAZA";
+		
+		System.out.println("Length of the name is : "+name.length());
+		
+		String city = null;  
+		
+		System.out.println("Length of the city is : "+city.length());
+		}
+		
+		catch (Exception e) {
+			System.out.println("Exception : city is null.");
+		}
+		System.out.println("main method END. "); 
+	}
+}
+

@@ -1,0 +1,115 @@
+package com.kodewala.ecommerce.ui;
+
+import java.util.Scanner;
+
+public class AdminConsole {
+
+	private Scanner sc;
+
+	public AdminConsole(Scanner sc) {
+		this.sc = sc;
+	}
+
+	public void start() {
+
+		boolean running = true;
+
+		while (running) {
+
+			System.out.println("""
+
+					===== ADMIN MENU =====
+
+					1. Add Product
+					2. View Products
+					3. Search Product
+					4. Update Product
+					5. Delete Product
+					6. View Customers
+					7. View All Orders
+					8. Exit
+					""");
+
+			System.out.print("Choose: ");
+
+			String choice = sc.nextLine();
+
+			switch (choice) {
+
+			case "1":
+				addProduct();
+				break;
+
+			case "2":
+				viewProducts();
+				break;
+
+			case "3":
+				searchProduct();
+				break;
+
+			case "4":
+				updateProduct();
+				break;
+
+			case "5":
+				deleteProduct();
+				break;
+
+			case "6":
+				viewCustomers();
+				break;
+
+			case "7":
+				viewOrders();
+				break;
+
+			case "8":
+				running = false;
+				break;
+
+			default:
+				System.out.println("Invalid choice.");
+			}
+		}
+	}
+
+	private void addProduct() {
+
+		System.out.println("Add Product");
+
+		// Take input
+		// Create Product
+		// Call ProductService
+	}
+
+	private void viewProducts() {
+
+		// Call ProductService
+	}
+
+	private void searchProduct() {
+
+		// Call ProductService
+	}
+
+	private void updateProduct() {
+
+		// Call ProductService
+	}
+
+	private void deleteProduct() {
+
+		// Call ProductService
+	}
+
+	private void viewCustomers() {
+
+		// Call CustomerService
+	}
+
+	private void viewOrders() {
+
+		// Call OrderService
+	}
+}

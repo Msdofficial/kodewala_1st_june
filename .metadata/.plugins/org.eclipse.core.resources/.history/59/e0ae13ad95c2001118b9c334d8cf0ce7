@@ -1,0 +1,12 @@
+package com.kodewala.thread6.itc;
+
+public class Consumer1 {
+	
+	Task task;
+	
+	public Consumer1(Task _task)
+	{
+		this.task = _task;
+	}
+
+}

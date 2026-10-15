@@ -1,0 +1,23 @@
+package com.kodewala.thread8.executor2;
+
+public class EmailSender {
+	
+	String email;
+	String body;
+	
+	
+	public EmailSender(String _email, String _body) {
+		super();
+		this.email = _email;
+		this.body = _body;
+	}
+	
+	public boolean sendEmail(String _email , String _body)
+	{
+		System.out.println("Sending Email");
+		return true;
+	}
+	
+	
+
+}

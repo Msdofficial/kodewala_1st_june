@@ -1,0 +1,31 @@
+package com.constructor;
+
+public class Bank {
+		String bankName ;
+		
+		Bank(String _bankName)
+		{
+			this.bankName = _bankName;
+		}
+		
+}
+
+class Customer extends Bank
+    {
+			String name;
+			int cust_Id;
+			
+			Customer(String _bankName , String _name , int _cust_Id)
+			{
+				super(_bankName);
+				this.name =  _name;
+				this.cust_Id = _cust_Id;
+			}
+			
+	public static void main(String[] args) {
+		Customer customer = new Customer("SBI" , "Masood" , 1234);
+		
+		System.out.println(customer.bankName + "\n" + customer.name + "\n" + customer.cust_Id);
+	}
+	
+}

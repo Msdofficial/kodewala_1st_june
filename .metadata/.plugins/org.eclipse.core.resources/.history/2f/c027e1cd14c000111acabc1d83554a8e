@@ -1,0 +1,20 @@
+package com.kodewala.ecommerce.repository;
+
+public class CustomerRepository {
+	
+	public void saveCustomer()
+	{
+		
+	}
+	
+	public void findAll()
+	{
+		
+	}
+	
+	public void findById()
+	{
+		
+	}
+
+}

@@ -1,0 +1,17 @@
+package com.kodewala.strings;
+
+public class Driver1 {
+      static String MSG1 = "Hello ";
+      static String MSG2 = ", \nWe have recieved your order for the item ";
+      static String MSG3 = " and it is getting ";
+      static  String MSG4 = ". It will be delivered on ";
+      
+      public static void main(String [] args) 
+      {
+    	  StringBuilderExmpl2 stringBuilderExmpl2 = new StringBuilderExmpl2();
+    	  
+    	  String message = stringBuilderExmpl2.sendingEmail("Md Masood","(perfume)","packed","16-08-2026");
+    	  
+    	  System.out.println(message);
+      }
+}

@@ -1,0 +1,21 @@
+package com.kodewala.zepto.exceptionhandling;
+
+public class User {
+	
+	
+	public void createUser(String userName , String userId)
+	{
+		System.out.println("Method START");
+		userId = null;
+		
+		try
+		{
+			userId = userName.substring(0, 5) + "123" ;)
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Unknown Exception");
+		}
+	}
+
+}

@@ -1,0 +1,81 @@
+import java.util.Scanner;
+
+public class CustomerConsole {
+
+    private Scanner sc;
+
+    public CustomerConsole(Scanner sc) {
+        this.sc = sc;
+    }
+
+    public void start() {
+
+        boolean running = true;
+
+        while (running) {
+
+            System.out.println("""
+                    
+                    ===== CUSTOMER MENU =====
+                    
+                    1. Register
+                    2. Login
+                    3. View Products
+                    4. Search Product
+                    5. Add Product to Cart
+                    6. View Cart
+                    7. Remove Product from Cart
+                    8. Place Order
+                    9. View My Orders
+                    10. Cancel Order
+                    11. Logout
+                    """);
+
+            System.out.print("Choose: ");
+
+            String choice = sc.nextLine();
+
+            switch (choice) {
+
+                case "1":
+                    register();
+                    break;
+
+                case "2":
+                    login();
+                    break;
+
+                case "3":
+                    viewProducts();
+                    break;
+
+                case "4":
+                    searchProduct();
+                    break;
+
+                // ...
+
+                case "11":
+                    running = false;
+                    break;
+
+                default:
+                    System.out.println("Invalid choice.");
+            }
+        }
+    }
+
+    private void register() {
+        // Take input
+        // Call CustomerService
+    }
+
+    private void login() {
+        // Take input
+        // Call CustomerService
+    }
+
+    private void viewProducts() {
+        // Call ProductService
+    }
+}
